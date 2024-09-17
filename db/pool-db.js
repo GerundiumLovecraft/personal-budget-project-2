@@ -1,10 +1,10 @@
 const {Pool} = require('pg');
 const pool = new Pool({
-    host: 'dpg-cmtaef0cmk4c738mabug-a.frankfurt-postgres.render.com',
-    port: 5432,
-    database: 'monthly_budget_db',
-    user: 'monthly_budget_db_user',
-    password: '0I4yVqPKlaLFjVjb6qcGOD48K1cDdieP',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_DATABASE,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     ssl: true,
     max: 10,
     connectionTimeoutMillis: 20000,

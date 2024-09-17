@@ -27,7 +27,6 @@ class budgetController {
         const remainder = budget;
         try {
             const result = await getClient.query('INSERT INTO budget_list(year, month, budget, remainder, currency) VALUES ($1, $2, $3, $4, $5)', [year, month, budget, remainder, currency]);
-            console.log(result.rows[0]);
         } catch (e) {
             throw e;
         };
