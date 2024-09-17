@@ -1,0 +1,145 @@
+openapi: 3.0.1
+info:
+  title: Monthly Budget App
+  version: 1.0.0
+  description: Plan out your budget for a month by envelope method
+paths:
+  /:
+    summary: Main view
+    description: Shows all monthly budget plans with the budget and remainder
+    get:
+      summary: Retrieves the main view
+      description: ''
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Main view
+    post:
+      summary: Creates a monthly budget plan record
+      description: Creates a new entry into the budget_list table
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Create monthly budget
+  /:budgetId:
+    summary: Manipulate monthly budget plan
+    get:
+      summary: Open a specific monthly budget plan
+      description: >-
+        User will be able to view monthly budget information (budget_list table)
+        and main information about all enelopes in this budget (envelope_list
+        table)
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - View monthly budget
+    post:
+      summary: Create an envelope
+      description: Creates a new envelope in envelope_list table
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Create envelope for a monthly budget plan
+    put:
+      summary: Correct monthly budget
+      description: 'User to correct budget / year / month '
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Correct monthly budget plan info
+    delete:
+      summary: Delete specific monthly budget plan
+      description: >-
+        Deletes all records (budget_list, envelope_list, spending_record_list)
+        for a specific monthly budget plan
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete monthly budget plan
+  /:budgetId/:envelopeId:
+    summary: Manipulate envelope in the specified budget
+    get:
+      summary: View envelope
+      description: >-
+        User should be able to see envelope information (envelope_list) and main
+        information about spending records (spending_record_list)
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - View envelope
+    post:
+      summary: Create a spending record
+      description: >-
+        Creates a spending record for a specific envelope in
+        spending_record_list table
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Create spending record
+    put:
+      summary: Correct envelope
+      description: User to correct an information in the envelope (name / budget)
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Correct envelope
+    delete:
+      summary: Delete envelope
+      description: >-
+        Deletes all information connected to the envelope (envelope_list,
+        spending_record_list)
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete envelope
+  /:budgetId/:envelopeId/:spendingId:
+    summary: Manipulate spending record in a specific envelope
+    get:
+      summary: View spending record
+      description: User to be able tot see all information about the spending record
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - View spending record
+    put:
+      summary: Correct spending record
+      description: >-
+        User to be able to correct information (name, date, spent amount, info)
+        in the spending record (spending_record_list)
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Correct spending record
+    delete:
+      summary: Delete spending record
+      description: Spending record will be deleted from the envelope
+      operationId: ''
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - Delete spending record
